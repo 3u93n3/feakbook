@@ -6,7 +6,7 @@ function conn(){
     $host = 'localhost';
     $user = 'root';
     $pass = '';
-    $db = 'fakebook'; //'demo_01';
+    $db = 'fakebook'; 
     $char = 'utf8mb4';
     $opt = array(
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -17,7 +17,7 @@ function conn(){
     $dsn = "mysql:host=$host;dbname=$db;charset=$char";
 
     try{
-     $pdo = new PDO($dsn, $user, $pass, $opt);
+        $pdo = new PDO($dsn, $user, $pass, $opt);
     }catch(PDOException $e){
         die('This is error --> ' . $e->getMessage());
     }
