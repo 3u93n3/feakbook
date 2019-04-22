@@ -29,20 +29,30 @@ SIGNUP;
 if(isset($_POST["signSubmit"])){  
     $msg = '';
 
-    //$name = filter_var($_POST['signName'], FILTER_SANITIZE_STRING);
-    $name = $_POST['signName'];
-    $pass = $_POST['signPass'];
+    //$name = filter_var($_POST['signName'], FILTER_SANITIZE_STRING);    
     //$x = filter_var($name, FILTER_VALIDATE_FLOAT);
 
-    try{
+    // try{
+        $sql = "SELECT * FROM users WHERE userName = :user";     
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(":user", $name);
+        $name = $_POST['signName'];
+        $stmt->execute();
+
+        if($stmt->rowCount() == 0){
+            $sql = "INSERT INTO users (userName, password) 
+            VALUES ('$name', '$pass')";    
+            $conn->exec($sql);
+            $msg =  "Records inserted successfully.";
+            header("Location: profileEdit.php");
+        }else{
+            $msg = "This username is already taken.";
+        }
 
 
-        $sql = "INSERT INTO users (userName, password) 
-        VALUES ('$name', '$pass')";    
-        $conn->exec($sql);
-        $msg =  "Records inserted successfully.";
-    } catch(PDOException $e){
-        // die("ERROR: Could not able to execute $sql. " . $e->getMessage());
-        $msg = $e->getMessage();
-    }    
+        
+    // } catch(PDOException $e){
+    //     // die("ERROR: Could not able to execute $sql. " . $e->getMessage());
+    //     $msg = $e->getMessage();
+    // }    
 }

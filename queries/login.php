@@ -30,6 +30,8 @@ if(isset($_POST["logSubmit"])){
             while($row = $stmt->fetch()){
                 $msg = $row;
             }
+
+            header("Location: profile.php");
         }else{
             $msg = "No account found with that username.";
         }

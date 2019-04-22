@@ -10,10 +10,13 @@ require "queries/login.php";
 require "queries/signup.php";
 
 // echo "Mesage from index.php: ";
-echo "<pre>";
-print_r($_POST);    
-print_r($msg);
-echo "</pre>";   
+if(isset($msg)){
+    echo "<pre>";
+    print_r($_POST);    
+    print_r($msg);
+    echo "</pre>";
+}
+   
 
 
 //Footer
