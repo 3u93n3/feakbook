@@ -6,8 +6,13 @@ require "pageHead.php";
 
 //require "form.html";
 
-require "queries/login.php";
-require "queries/signup.php";
+if(isset($_SESSION['user'])){
+    header("Location: profile.php");
+}else{
+    require "queries/login.php";
+    require "queries/signup.php";
+}
+
 
 // echo "Mesage from index.php: ";
 if(isset($msg)){

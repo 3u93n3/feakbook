@@ -1,13 +1,20 @@
 <?php
-
 // Header
 require "pageHead.php";
 
 //Body
-echo "<a href='index.php'>Home</a>";
-echo "<img src='uploads/img.png' alt='profile picture'/>";
+echo "<h2>Profile</h2>";
+echo "<a href='index.php'>Home</a><br />";
+echo "<a href='logout.php'>Logout</a><br />";
+echo "<a href='profileEdit.php'>Edit Profile</a>";
 
-Echo "<h2>Profile</h2>";
+$name = $_SESSION['user'];
+$img = $_SESSION['img'];
+
+// echo "<br />" . $name . "<br />" . $img;
+
+
+include "profileForm.php";
 
 
 //Footer
