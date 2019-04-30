@@ -1,28 +1,15 @@
 <?php
 // Header
-require "pageHead.php";
+require "templates/pageHead.php";
 
 //Body
 
-//require "form.html";
-
-if(isset($_SESSION['user'])){
+if(isset($_SESSION['user'])){ //loggedin
     header("Location: profile.php");
 }else{
-    require "queries/login.php";
-    require "queries/signup.php";
-}
-
-
-// echo "Mesage from index.php: ";
-if(isset($msg)){
-    echo "<pre>";
-    print_r($_POST);    
-    print_r($msg);
-    echo "</pre>";
-}
-   
+    require "templates/form.php";    
+}  
 
 
 //Footer
-require "pageFoot.php";
+require "templates/pageFoot.php";

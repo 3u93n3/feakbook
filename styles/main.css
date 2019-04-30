@@ -37,10 +37,13 @@ input:hover{
     text-align: center;
     padding: 10px;
     margin: 0 auto;
+    font-weight: bold;
+    font-size: 1.4em;
+    color: rgb(0, 107, 107);
 }
 
 #prf img{
-    border-radius: 50%;
+    /* border-radius: 50%; */
     max-width: 150px;
     max-height: 150px;
 }

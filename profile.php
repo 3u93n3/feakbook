@@ -1,6 +1,6 @@
 <?php
 // Header
-require "pageHead.php";
+require "templates/pageHead.php";
 
 //Body
 echo "<h2>Profile</h2>";
@@ -11,11 +11,11 @@ echo "<a href='profileEdit.php'>Edit Profile</a>";
 $name = $_SESSION['user'];
 $img = $_SESSION['img'];
 
-// echo "<br />" . $name . "<br />" . $img;
+echo "<br />" . $name . "<br />" . $img;
 
 
-include "profileForm.php";
+require "templates/profileForm.php";
 
 
 //Footer
-require "pageFoot.php";
+require "templates/pageFoot.php";

@@ -1,3 +1,8 @@
+<?php
+    require "queries/login.php";
+    require "queries/signup.php";
+?>
+
 <form action="index.php" method="post">
     <fieldset>
         <legend>Login</legend>        
@@ -34,7 +39,3 @@
     </fieldset>    
 </form>
 
-<form action="profileEdit.php" method="POST" enctype="multipar/form-data">
-    <input type="file" name="imgUpload" id="imgUpload" />
-    <input type="submit" value="Imgage Upload">
-</form>
