@@ -48,3 +48,8 @@ input:hover{
     max-height: 150px;
 }
 
+.usersList p{
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.2em;
+}

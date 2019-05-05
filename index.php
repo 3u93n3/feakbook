@@ -10,6 +10,12 @@ if(isset($_SESSION['user'])){ //loggedin
     require "templates/form.php";    
 }  
 
+if(isset($msg)){
+    echo $msg;
+}
+
+
+
 
 //Footer
 require "templates/pageFoot.php";

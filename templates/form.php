@@ -1,6 +1,11 @@
 <?php
+if(isset($_POST["logSubmit"])){  
     require "queries/login.php";
+}
+
+if(isset($_POST["signSubmit"])){  
     require "queries/signup.php";
+}
 ?>
 
 <form action="index.php" method="post">
@@ -39,3 +44,7 @@
     </fieldset>    
 </form>
 
+<?php
+unset($stmt);
+unset($conn);
+?>

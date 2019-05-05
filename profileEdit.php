@@ -4,9 +4,13 @@ require "templates/pageHead.php";
 
 
 //Body
-echo "<a href='index.php'>Home</a>";
+echo "<h2>Edit Profile</h2>";
 
-require "queries/imgUpload.php";
+require "templates/navigation.php";
+
+if(!empty($_FILES['imgUpload'])){
+    require "queries/imgUpload.php";
+}
 
 require "templates/profileForm.php";
 
