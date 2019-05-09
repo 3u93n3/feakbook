@@ -1,11 +1,8 @@
 <?php
-if(isset($_POST["logSubmit"])){  
-    require "queries/login.php";
-}
 
-if(isset($_POST["signSubmit"])){  
-    require "queries/signup.php";
-}
+require "queries/login.php";
+require "queries/signup.php";
+
 ?>
 
 <form action="index.php" method="post">

@@ -16,6 +16,7 @@ input{
     padding: 5px 15px;
     font-size: 1.2em;
     margin: 3px;
+    background-color: rgb(223, 223, 223);
 }
 
 input:hover{
@@ -25,7 +26,7 @@ input:hover{
 }
 
 .input{
-    border-bottom: 1px silver solid;
+    border-bottom: 1px rgb(116, 116, 116) solid;
     font-size: 1.1em;
     padding: 3px;
 }
@@ -36,7 +37,7 @@ input:hover{
     background-color: silver;
     text-align: center;
     padding: 10px;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     font-weight: bold;
     font-size: 1.4em;
     color: rgb(0, 107, 107);
@@ -52,4 +53,17 @@ input:hover{
     font-weight: bold;
     text-decoration: underline;
     font-size: 1.2em;
+}
+
+#post{
+    width: 50%;
+    box-shadow: 0 0 10px silver;    
+}
+
+#post p{
+    background-color: gray;
+    color: white;
+    font-family:  Courier, monospace;
+    margin: 0;
+    text-align: justify;
 }

@@ -24,6 +24,10 @@ echo "<div class='usersList'><p>Invitation/s sent</p>";
 require "queries/invitationSent.php";
 echo "</div>";
 
+echo "<div class='usersList'><p>Your friend/s</p>";
+require "queries/invitationSent.php";
+echo "</div>";
+
 
 
 
