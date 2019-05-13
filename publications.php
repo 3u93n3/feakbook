@@ -4,12 +4,12 @@
 require "templates/pageHead.php";
 
 //Body
+if(isset($_SESSION['loggedin'])){
+    echo "<h2>Posts</h2>";
 
-echo "<h2>Posts</h2>";
+    require "templates/navigation.php";
 
-require "templates/navigation.php";
-
-require "templates/profileForm.php";
+    require "templates/profileForm.php";
 
 echo <<<_POST
     <form action="queries/postInsert.php" method="POST">
@@ -27,20 +27,22 @@ echo <<<_POST
     </form>
 _POST;
 
-// require "queries/postInsert.php";
+    // require "queries/postInsert.php";
 
-if(isset($_POST['post_btn'])){
-    echo "Ypu pres button";
+    if(isset($_POST['post_btn'])){
+        echo "Ypu pres button";
 
+    }
+
+    if(isset($_GET['post'])){
+        echo $_GET['post'];
+    }
+
+
+    require "queries/postRead.php";
+}else{
+    header("Location: index.php");
 }
-
-if(isset($_GET['post'])){
-    echo $_GET['post'];
-}
-
-
-require "queries/postRead.php";
-
 
 //Footer
 require "templates/pageFoot.php";

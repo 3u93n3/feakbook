@@ -1,37 +1,23 @@
 <?php
-$user = $_SESSION['user'];
 
-if(isset($_GET['friend'])){    
-    $sql1 = "INSERT INTO friends(user_one, user_two, status) 
-    VALUES(:u_1, :u_2, 1)";
+try{
+    
+    $loggUser = $_SESSION['user'] ;
 
-    $stmt = $conn->prepare($sql1);
-    $stmt->bindParam(':u_1', $_SESSION['user']);
-    $stmt->bindParam(':u_2', $_GET['friend']);
+    $sql = "SELECT userName FROM users";
+    $stmt = $conn->query($sql);
 
-
-
-$stmt->execute();
-}
-
-$sql = "SELECT * FROM users";
-$stmt = $conn->query($sql);
-while($row = $stmt->fetch()){
-    $friend =  $row['userName'];
-
-    $stmt2 = $conn->query("SELECT * FROM friends 
-    WHERE user_one = '$user' AND user_two = '$friend'
-    OR user_two = '$user' AND user_one = '$friend'");
-
-    if($stmt2->rowCount() == 0){
-        if($friend !== $user){
-            echo $friend;
-            echo "<a href='friends.php?friend=$friend'> invite </a> <br />";
+    foreach($stmt as $row){
+        $user = $row['userName'];
+        $result = $conn->query("SELECT * FROM friends 
+        WHERE user_one = '$user' AND user_two = '$loggUser' 
+        OR  user_one = '$loggUser' AND user_two = '$user'");
+        if($result->rowCount() == 0){
+            if($loggUser != $user){
+                echo $user . "|" . "<a href='queries/invite.php?invite=$user'>Invite</a><br>";
+            }
         }
-    }
-     
+    } 
+}catch(PDOException $e){
+    $_SESSION['msg'] =  $e->getMessage() . " -> From users <br>";
 }
-
-
-
-

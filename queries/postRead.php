@@ -22,4 +22,5 @@ while($row = $stmt->fetch()){
         
         require "templates/postForm.php";
     }
-}
+}    
+

@@ -13,6 +13,6 @@ if(isset($_POST['post_btn'])){
 
     $conn->exec($sql);    
 
-    header("Location: ../publications.php?post=success");
+    header("Location: ../publications.php?action=post");
 }
 

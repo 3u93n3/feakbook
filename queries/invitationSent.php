@@ -1,13 +1,17 @@
 <?php
 
-$user = $_SESSION['user'];
-$stmt = $conn->query("SELECT * FROM friends 
-WHERE user_one = '$user' 
-OR user_two = '$user' ");
+try{
+    $sql = "SELECT * FROM friends ";
+    $stmt = $conn->query($sql);
+    
+    foreach($stmt as $row){
+        if($row['user_one'] == $_SESSION['user']){
+            echo $row['user_two'] . "<br>";
+        }
+        
+    }
 
-while($row = $stmt->fetch()){
-    if($row['user_one'] == $user){
-        echo $row['user_two'];
-        echo "<br>";
-    }    
+
+}catch(PDOException $e){
+    $_SESSION['msg'] =  $e->getMessage() . " -> From sent <br>";
 }

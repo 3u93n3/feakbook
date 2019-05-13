@@ -4,15 +4,17 @@ require "templates/pageHead.php";
 
 
 //Body
-echo "<h2>Edit Profile</h2>";
 
-require "templates/navigation.php";
+if(isset($_SESSION['loggedin'])){
+    echo "<h2>Edit Profile</h2>";
 
-if(!empty($_FILES['imgUpload'])){
-    require "queries/imgUpload.php";
-}
+    require "templates/navigation.php";
 
-require "templates/profileForm.php";
+    if(!empty($_FILES['imgUpload'])){
+        require "queries/imgUpload.php";
+    }
+
+    require "templates/profileForm.php";
 
 echo <<<IMG_UPLOAD
     <form action="profileEdit.php" method="POST" enctype="multipart/form-data">
@@ -20,6 +22,9 @@ echo <<<IMG_UPLOAD
         <input type="submit" name="imgSubmit" value="Image Upload">
     </form>
 IMG_UPLOAD;
+}else{
+    header("Location: index.php");
+}
 
 //Footer
 require "templates/pageFoot.php";

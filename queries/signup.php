@@ -14,6 +14,7 @@ if(isset($_POST["signSubmit"])){
     if($stmt->rowCount() == 0){
         $_SESSION['user'] = $name;
         $_SESSION['img'] = "img.png";
+        $_SESSION['loggedin'] = true;
 
         $sql = "INSERT INTO users (userName, password) 
         VALUES ('$name', '$pass')";    
@@ -28,7 +29,7 @@ if(isset($_POST["signSubmit"])){
         }
 
 
-        header("Location: profileEdit.php"); //For test
+        header("Location: profile.php"); //For test
     }else{
         $msg = "This username is already taken.";
     }
