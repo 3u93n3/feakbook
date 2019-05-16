@@ -26,19 +26,7 @@ echo <<<_POST
         <input type="submit" value="Post" name="post_btn">
     </form>
 _POST;
-
-    // require "queries/postInsert.php";
-
-    if(isset($_POST['post_btn'])){
-        echo "Ypu pres button";
-
-    }
-
-    if(isset($_GET['post'])){
-        echo $_GET['post'];
-    }
-
-
+    
     require "queries/postRead.php";
 }else{
     header("Location: index.php");

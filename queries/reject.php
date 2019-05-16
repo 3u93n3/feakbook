@@ -15,7 +15,7 @@ try{
     }
     
 }catch(PDOException $e){
-    $_SESSION['msg'] =  $e->getMessage() . " -> From reject <br>";
+    $_SESSION['msg'] .=  $e->getMessage() . $e->getFile() . "<br>";
 }
 
 header("Location: ../friends.php?status=reject");

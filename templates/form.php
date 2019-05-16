@@ -37,7 +37,17 @@ require "queries/signup.php";
         <input type="text" name="enterCode" id="enterCode"  class="input" 
         placeholder="Enter Code">
         <br />
-        <input type="submit" name="signSubmit" value="Login">
+        <input type="submit" name="signSubmit" id="signup" value="Signup">
+        <p id="nameErr" class="errMsg">
+            The name must have only letters and numbers and  be from 4 to 15 characters
+        </p>
+        <p id="passErr" class="errMsg">
+            The password must have only letters and numbers and  be from 6 to 18 characters
+        </p>
+        <p id="passConfErr" class="errMsg">
+            Passwords are not the same.
+        </p>
+
     </fieldset>    
 </form>
 

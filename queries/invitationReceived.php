@@ -14,5 +14,5 @@ try{
         }
     }
 }catch(PDOException $e){
-    $_SESSION['msg'] =  $e->getMessage() . " -> From received <br>";
+    $_SESSION['msg'] .=  $e->getMessage() . $e->getFile() . "<br>";
 }

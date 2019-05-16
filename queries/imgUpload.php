@@ -6,8 +6,8 @@ if(!empty($_SESSION['img']) ){
     }
 }
 
-print_r($_SESSION['img']);
-echo $_SESSION['img'] == "img.png";
+// print_r($_SESSION['img']);
+// echo $_SESSION['img'] == "img.png";
 
 $sqlChange = "UPDATE users SET img_url = :img_url WHERE userName = :name";
 $stmt = $conn->prepare($sqlChange);
@@ -25,7 +25,7 @@ $stmt->execute();
 
 move_uploaded_file($_FILES['imgUpload']['tmp_name'], $img_url);
 
-echo "<pre>";
-print_r($_FILES['imgUpload']);
-print_r($_POST);    
-echo "</pre>";
+// echo "<pre>";
+// print_r($_FILES['imgUpload']);
+// print_r($_POST);    
+// echo "</pre>";

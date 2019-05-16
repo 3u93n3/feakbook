@@ -10,7 +10,7 @@ try{
     VALUES('$user', '$friend', 1)";
     $conn->query($sql);
 }catch(PDOException $e){
-    $_SESSION['msg'] =  $e->getMessage() . " -> From invite <br>";
+    $_SESSION['msg'] .=  $e->getMessage() . $e->getFile() . "<br>";
 }
 
 header("Location: ../friends.php?status=conecting");

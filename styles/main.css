@@ -67,3 +67,13 @@ input:hover{
     margin: 0;
     text-align: justify;
 }
+
+.errMsg{
+    color: red;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+#nameErr, #passErr, #passConfErr{
+    visibility: hidden;
+}
