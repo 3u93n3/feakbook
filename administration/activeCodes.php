@@ -10,12 +10,13 @@ try{
   $sql = "SELECT * FROM codes LIMIT $from, $amount";
   $stmt = $conn->query($sql);
   $length =  $conn->query("SELECT * FROM codes")->rowCount();
-  echo $length . "<br>";
-  foreach($stmt as $row){
-    // print_r($row);
-    echo $row['code_id'] . " --> " . $row['code'];
-    echo "<br>";
+
+  $start = $from + 1;
+  echo "<ol start='$start'>";
+  foreach($stmt as $row){    
+    echo  "<li>" . $row['code'] . "</li>";  
   }
+  echo "</ol>";
 }catch(PDOException $e){
   echo $e->getMessage();
 }

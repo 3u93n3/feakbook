@@ -4,12 +4,12 @@ require "templates/pageHead.php";
 
 //Body
 if(isset($_SESSION['loggedin'])){
-    
-    echo "<h2>Profile</h2>";
+    require "templates/navigation.php";
+    echo "<h2 class='pageTitle'>Profile</h2>";
     // echo "<a href='index.php'>Home</a><br />";
     // echo "<a href='logout.php'>Logout</a><br />";
     // echo "<a href='profileEdit.php'>Edit Profile</a>";
-    require "templates/navigation.php";
+    
 
     $img = $_SESSION['img'];
     $name = $_SESSION['user'];

@@ -12,4 +12,5 @@ require_once "includes/dbc.php";
     <title>Feakbook</title>
 </head>
 <body>
+    <div id="logo">fakebook</div>
     <div id="container">

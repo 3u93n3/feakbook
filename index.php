@@ -6,6 +6,8 @@ require "templates/pageHead.php";
 
 if(isset($_SESSION['loggedin'])){
     header("Location: profile.php");
+    // unset($stmt);
+    // unset($conn);
 }else{
     require "templates/form.php";    
 }  

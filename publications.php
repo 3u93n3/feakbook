@@ -5,20 +5,18 @@ require "templates/pageHead.php";
 
 //Body
 if(isset($_SESSION['loggedin'])){
-    echo "<h2>Posts</h2>";
-
     require "templates/navigation.php";
-
+    echo "<h2 class='pageTitle'>Posts</h2>";  
     require "templates/profileForm.php";
 
 echo <<<_POST
-    <form action="queries/postInsert.php" method="POST">
+    <form class='centred' action="queries/postInsert.php" method="POST">
         Public:
         <input type="radio" name="public" value="1" checked="checked">
-        <br />
-        Friend:
+        | Friend:
         <input type="radio" name="public" value="0">
         <br />
+        Title:
         <input type="text" name="subject" id="subject">
         <br />
         <textarea name="post" id="post" cols="30" rows="10"></textarea>

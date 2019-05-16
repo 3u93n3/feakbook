@@ -12,7 +12,6 @@ try{
         WHERE user_two = '$user' AND user_one = '$friend'");
        
     }
-    
 }catch(PDOException $e){
     $_SESSION['msg'] .=  $e->getMessage() . $e->getFile() . "<br>";
 }

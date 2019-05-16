@@ -8,7 +8,7 @@ $friend = $_GET['invite'];
 try{
     $sql = "INSERT INTO friends (user_one, user_two, status) 
     VALUES('$user', '$friend', 1)";
-    $conn->query($sql);
+    $conn->exec($sql);
 }catch(PDOException $e){
     $_SESSION['msg'] .=  $e->getMessage() . $e->getFile() . "<br>";
 }

@@ -5,10 +5,19 @@ body{
     padding: 0;
 }
 
+#logo{
+    font-size: 5em;
+    text-align: center;
+    font-weight: bold;
+    font-family:  monospace;
+    color: silver;
+    text-shadow: 0 0 5px gray;
+}
+
 #container{
     width: 960px;
     margin: 0 auto;
-    box-shadow: 0 0 10px silver;
+    box-shadow: 0 0 10px silver;    
 }
 
 input{
@@ -34,13 +43,13 @@ input:hover{
 #prf{
     width: 200px;
     height: auto;
-    background-color: silver;
+    background-color: rgb(230, 230, 230);
     text-align: center;
-    padding: 10px;
-    /* margin: 0 auto; */
+    padding: 10px;    
     font-weight: bold;
     font-size: 1.4em;
     color: rgb(0, 107, 107);
+    box-shadow: 0 0 10px gray;
 }
 
 #prf img{
@@ -75,5 +84,58 @@ input:hover{
 }
 
 #nameErr, #passErr, #passConfErr{
-    visibility: hidden;
+    display: none;
+}
+
+#nav li{
+    list-style: none;
+    float: left;    
+    margin: 0 5px;
+    text-decoration: none;
+    /* border: 1px solid black; */
+}
+
+#nav li:last-child{
+    float: right;
+}
+
+#nav li a{   
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(223, 223, 223); 
+    display: block;
+
+}
+
+#nav li a:hover{       
+    color: white;    
+    background-color: silver;
+}
+
+#nav::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.pageTitle{
+    font-size: 3em;
+    text-align: center;
+    font-weight: bold;
+    font-family:  monospace;
+    color: silver;
+    text-shadow: 0 0 5px gray;
+}
+
+.centred{
+    margin: 0 auto;
+    text-align: center;
+}
+
+#inputForm{
+    width: 300px;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px;
 }

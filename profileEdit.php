@@ -6,9 +6,8 @@ require "templates/pageHead.php";
 //Body
 
 if(isset($_SESSION['loggedin'])){
-    echo "<h2>Edit Profile</h2>";
-
     require "templates/navigation.php";
+    echo "<h2 class='pageTitle'>Edit Profile</h2>";    
 
     if(!empty($_FILES['imgUpload'])){
         require "queries/imgUpload.php";
@@ -17,10 +16,12 @@ if(isset($_SESSION['loggedin'])){
     require "templates/profileForm.php";
 
 echo <<<IMG_UPLOAD
-    <form action="profileEdit.php" method="POST" enctype="multipart/form-data">
-        <input type="file" name="imgUpload" id="imgUpload" />
-        <input type="submit" name="imgSubmit" value="Image Upload">
-    </form>
+    <div class="centred">
+        <form action="profileEdit.php" method="POST" enctype="multipart/form-data">
+            <input type="file" name="imgUpload" id="imgUpload" />
+            <input type="submit" name="imgSubmit" value="Image Upload">
+        </form>
+    </div>
 IMG_UPLOAD;
 }else{
     header("Location: index.php");
