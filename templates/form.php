@@ -47,6 +47,11 @@ require "queries/signup.php";
             <p id="passConfErr" class="errMsg">
                 Passwords are not the same.
             </p>
+            <?php
+                if(isset($_SESSION['msg'])){
+                    echo "<p class='errMsg'>" . $_SESSION['msg'] . "</p>";
+                }    
+            ?>
         </fieldset>    
     </form>
 </div>

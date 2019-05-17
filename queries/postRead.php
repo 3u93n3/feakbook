@@ -59,5 +59,6 @@ try{
     $_SESSION['msg'] .=  $e->getMessage() . $e->getFile() . "<br>";
 }
 
-
+unset($stmt);
+unset($stmt1);
 

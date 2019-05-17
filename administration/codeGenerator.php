@@ -13,7 +13,6 @@ function rnd(){
   return $code;
 }
 
-// $_SESSION['code'] = rnd();
 
 try{
   $code = rnd();

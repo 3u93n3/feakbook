@@ -18,9 +18,9 @@ require "../includes/dbc.php";
 echo "<h2>Admin</h2>";
 
 
-if(isset($_GET['msg'])){
-    echo $_GET['msg'];
-}
+// if(isset($_GET['msg'])){
+//     echo $_GET['msg'];
+// }
 
 if(isset($_SESSION['admin'])){
     

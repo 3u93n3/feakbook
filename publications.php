@@ -10,7 +10,8 @@ if(isset($_SESSION['loggedin'])){
     require "templates/profileForm.php";
 
 echo <<<_POST
-    <form class='centred' action="queries/postInsert.php" method="POST">
+    <form class='centred' action="queries/postInsert.php" method="POST" 
+    id='postPublication'>
         Public:
         <input type="radio" name="public" value="1" checked="checked">
         | Friend:
@@ -21,7 +22,7 @@ echo <<<_POST
         <br />
         <textarea name="post" id="post" cols="30" rows="10"></textarea>
         <br />
-        <input type="submit" value="Post" name="post_btn">
+        <input type="submit" value="Post" name="post_btn" id="post_btn">
     </form>
 _POST;
     

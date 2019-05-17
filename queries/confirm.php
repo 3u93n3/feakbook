@@ -1,7 +1,7 @@
 <?php
 session_start();
 require "../includes/dbc.php";
-
+//friends/invitationReceived
 try{
     $user = $_SESSION['user'];
     $friend = $_GET['user'];
@@ -15,5 +15,7 @@ try{
 }catch(PDOException $e){
     $_SESSION['msg'] .=  $e->getMessage() . $e->getFile() . "<br>";
 }
+
+unset($stmt);
 
 header("Location: ../friends.php?status=confirm");

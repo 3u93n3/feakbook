@@ -3,24 +3,27 @@ body{
     font-size: 100%;
     margin: 0;
     padding: 0;
+    background-color: rgb(228, 227, 227);
 }
 
-#logo{
+#logo{    
     font-size: 5em;
     text-align: center;
     font-weight: bold;
     font-family:  monospace;
-    color: silver;
-    text-shadow: 0 0 5px gray;
+    color: white;
+    text-shadow: 0 0 5px gray;    
 }
 
 #container{
-    width: 960px;
+    max-width: 960px;
     margin: 0 auto;
     box-shadow: 0 0 10px silver;    
+    background-color: white;
 }
 
 input{
+    max-width: 90%;
     border: none;
     padding: 5px 15px;
     font-size: 1.2em;
@@ -50,12 +53,18 @@ input:hover{
     font-size: 1.4em;
     color: rgb(0, 107, 107);
     box-shadow: 0 0 10px gray;
+    margin-bottom: 10px;
 }
 
 #prf img{
-    /* border-radius: 50%; */
     max-width: 150px;
     max-height: 150px;
+}
+
+.usersList{
+    box-shadow:  0 0 10px gray;
+    width: 50%;
+    margin: 0 auto;
 }
 
 .usersList p{
@@ -77,6 +86,10 @@ input:hover{
     text-align: justify;
 }
 
+#post_btn{
+    width: 50%;
+}
+
 .errMsg{
     color: red;
     font-weight: bold;
@@ -92,7 +105,6 @@ input:hover{
     float: left;    
     margin: 0 5px;
     text-decoration: none;
-    /* border: 1px solid black; */
 }
 
 #nav li:last-child{
@@ -138,4 +150,9 @@ input:hover{
     text-align: center;
     margin: 0 auto;
     padding: 30px;
+}
+
+#postPublication{
+    max-width: 70%;
+    box-shadow: 0 0 10px silver; 
 }

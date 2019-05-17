@@ -1,5 +1,5 @@
 <?php
-
+//friend
 try{
     $sql = "SELECT * FROM friends WHERE status = 2";
     $stmt = $conn->query($sql);
@@ -19,3 +19,5 @@ try{
 }catch(PDOException $e){
     $_SESSION['msg'] .=  $e->getMessage() . $e->getFile() . "<br>";
 }
+
+unset($stmt);

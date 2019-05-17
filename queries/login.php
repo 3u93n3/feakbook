@@ -37,4 +37,4 @@ try{
     $_SESSION['msg'] .= $e->getMessage() . $e->getLine() . $e->getCode();
 }
 
-
+unset($stmt);
