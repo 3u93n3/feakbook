@@ -1,5 +1,5 @@
 <?php
-//friend
+
 try{
     $sql = "SELECT * FROM friends WHERE status = 2";
     $stmt = $conn->query($sql);

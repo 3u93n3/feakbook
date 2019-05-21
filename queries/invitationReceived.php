@@ -1,5 +1,5 @@
 <?php
-//friend
+
 try{
     $sql = "SELECT * FROM friends";
     $stmt = $conn->query($sql);

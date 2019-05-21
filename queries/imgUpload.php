@@ -6,22 +6,22 @@ try{
     if($_FILES['imgUpload']['error'] == 0){
         if(!empty($_SESSION['img']) ){
             if($_SESSION['img'] != "img.png"){
+                //Delete old profile picture.
                 unlink($_SESSION['img']); 
             }
         }   
 
         $fileTypes = array('jpg', 'png', 'gif', 'tif');
         $img_extension = explode(".", $_FILES['imgUpload']['name']);
-        //$fileArr = explode(".", $$img_extension);
         $fileExtension = end($img_extension );
 
-        //Chekin if file is image
+        //Chekin if file is image.
         if(in_array($fileExtension, $fileTypes)){
             echo "File type is ok <br>";
         }else{
             $_SESSION['msg'] .= "File isn't  right type ";
             $_SESSION['img'] = "img.png";
-            exit;
+            exit(header("Location: profileEdit.php"));
         }
 
         //Chekin if file right size
@@ -30,9 +30,10 @@ try{
         }else{
             $_SESSION['msg'] .= "File is biger than 1MB";
             $_SESSION['img'] = "img.png";
-            exit;
+            exit(header("Location: profileEdit.php"));
         }
     
+        //Change user profile picture.
         $sqlChange = "UPDATE users SET img_url = :img_url WHERE userName = :name";
         $stmt = $conn->prepare($sqlChange);
     

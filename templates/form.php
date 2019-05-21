@@ -1,11 +1,5 @@
-<?php
-
-require "queries/login.php";
-require "queries/signup.php";
-
-?>
 <div id="inputForm">
-    <form action="index.php" method="post">
+    <form action="queries/login.php" method="post">
         <fieldset>
             <legend>Login</legend>        
             <input type="text" name="logName" id="logName" class="input"  
@@ -18,7 +12,7 @@ require "queries/signup.php";
         </fieldset>    
     </form>
 
-    <form action="index.php" method="post">
+    <form action="queries/signup.php" method="post">
         <fieldset>
             <legend>Sign Up</legend>
             
@@ -46,14 +40,9 @@ require "queries/signup.php";
             </p>
             <p id="passConfErr" class="errMsg">
                 Passwords are not the same.
-            </p>
-            <?php
-                if(isset($_SESSION['msg'])){
-                    echo "<p class='errMsg'>" . $_SESSION['msg'] . "</p>";
-                }    
-            ?>
+            </p>            
         </fieldset>    
-    </form>
+    </form>    
 </div>
 
 

@@ -31,10 +31,7 @@ try{
                 require "templates/postForm.php";
             }            
         }else{
-            while($row1 = $stmt1->fetch()){
-                // echo "<pre>";
-                // print_r($row1);
-                // echo "<pre>";
+            while($row1 = $stmt1->fetch()){                
                 if($row1['status'] == 2 ){
                     $sub = $row['subject'];
                     $cont = $row['post'];

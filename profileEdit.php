@@ -23,6 +23,11 @@ echo <<<IMG_UPLOAD
         </form>
     </div>
 IMG_UPLOAD;
+
+if(isset($_SESSION['msg'])){
+    echo "<p class='errMsg centred'>" . $_SESSION['msg'] . "</p>";
+    $_SESSION['msg'] = "";
+}
 }else{
     header("Location: index.php");
 }

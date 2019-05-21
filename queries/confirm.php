@@ -1,16 +1,16 @@
 <?php
 session_start();
 require "../includes/dbc.php";
-//friends/invitationReceived
+
 try{
     $user = $_SESSION['user'];
     $friend = $_GET['user'];
     $stmt = $conn->query("UPDATE friends SET status = 2 
-    WHERE user_one = '$user' AND user_two = '$friend'");
+    WHERE user_one = '$user' AND user_two = '$friend'");   
+
     if($stmt->rowCount() == 0){
-        $conn->exec("UPDATE friends SET status = 2 
-        WHERE user_two = '$user' AND user_one = '$friend'");
-       
+        $conn->query("UPDATE friends SET status = 2 
+        WHERE user_two = '$user' AND user_one = '$friend'");                  
     }
 }catch(PDOException $e){
     $_SESSION['msg'] .=  $e->getMessage() . $e->getFile() . "<br>";

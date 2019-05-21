@@ -25,10 +25,11 @@ function conn(){
 };
 
 
-if($conn){
+if(! empty ($conn)){
     return $conn;
 }else{
     $conn = conn();
+    return $conn;
 }
 
 function sanitize_input($data){

@@ -43,6 +43,7 @@ input:hover{
     padding: 3px;
 }
 
+
 #prf{
     width: 200px;
     height: auto;
@@ -74,7 +75,7 @@ input:hover{
 }
 
 #post{
-    width: 50%;
+    width: 70%;
     box-shadow: 0 0 10px silver;    
 }
 
@@ -87,7 +88,7 @@ input:hover{
 }
 
 #post_btn{
-    width: 50%;
+    width: 30%;
 }
 
 .errMsg{
@@ -138,6 +139,7 @@ input:hover{
     font-family:  monospace;
     color: silver;
     text-shadow: 0 0 5px gray;
+    margin: 0;
 }
 
 .centred{
@@ -155,4 +157,9 @@ input:hover{
 #postPublication{
     max-width: 70%;
     box-shadow: 0 0 10px silver; 
+}
+
+hr{
+    width: 90%;    
+    box-shadow: 0 0 10px gray;
 }
